@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { withNamespaces } from "react-i18next";
 
 class NoteDetails extends Component {
   state = {
@@ -21,6 +22,7 @@ class NoteDetails extends Component {
 
   render() {
     const { note } = this.state;
+    const { t } = this.props;
 
     return (
       <div className="card border-light mt-5">
@@ -28,7 +30,7 @@ class NoteDetails extends Component {
         <div className="card-body">
           <h5 className="card-title">{note.title}</h5>
           <p className="card-text">
-            <strong> {note.title}</strong> plays in {note.genre} genre
+            <strong> {note.title}</strong> {t("play")} {note.genre}
           </p>
         </div>
       </div>
@@ -36,4 +38,4 @@ class NoteDetails extends Component {
   }
 }
 
-export default NoteDetails;
+export default withNamespaces()(NoteDetails);

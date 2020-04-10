@@ -1,0 +1,15 @@
+{
+  "Welcome to React": "Welcome to React and react-i18next",
+  "brand": "Music notes",
+  "myNotes": "My notes",
+  "addNote": "Add note",
+  "addTitle": "Add title",
+  "addGenre": "Add genre",
+  "editNote": "Edit note",
+  "editTitle": "Edit music band",
+  "editGenre": "Edit genre",
+  "bandName": "Band Name",
+  "genre": "Genre",
+  "actions": "Actions",
+  "play": "are playing"
+}

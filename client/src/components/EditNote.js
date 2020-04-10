@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { withNamespaces } from "react-i18next";
 
 class EditNote extends Component {
   state = {
@@ -48,12 +49,13 @@ class EditNote extends Component {
   };
 
   render() {
+    const { t } = this.props;
     return (
-      <div>
-        <h3>Edit note</h3>
+      <div className="mt-4">
+        <h3>{t("editNote")}</h3>
         <form onSubmit={this.submitHandler}>
           <div className="form-group">
-            <label htmlFor="title"> Edit music band </label>
+            <label htmlFor="title">{t("editTitle")}</label>
             <input
               type="text"
               className="form-control"
@@ -67,7 +69,7 @@ class EditNote extends Component {
           </div>
 
           <div className="form-group">
-            <label htmlFor="genre"> Edit genre </label>
+            <label htmlFor="genre">{t("editGenre")}</label>
             <input
               type="text"
               className="form-control"
@@ -81,7 +83,7 @@ class EditNote extends Component {
           </div>
 
           <button type="submit" className="btn btn-success btn-block">
-            Edit info
+            {t("editNote")}
           </button>
         </form>
       </div>
@@ -89,4 +91,4 @@ class EditNote extends Component {
   }
 }
 
-export default EditNote;
+export default withNamespaces()(EditNote);

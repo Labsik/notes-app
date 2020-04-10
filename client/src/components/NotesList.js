@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import NoteItem from "./NoteItem";
+import { withNamespaces } from "react-i18next";
 
 class NotesList extends Component {
   state = {
@@ -33,15 +34,16 @@ class NotesList extends Component {
 
   render() {
     const { notes } = this.state;
+    const { t } = this.props;
 
     return (
       <div>
         <table className="table" style={{ marginTop: 20 }}>
           <thead className="thead-dark">
             <tr>
-              <th>Band name</th>
-              <th>Genre</th>
-              <th>Actions</th>
+              <th>{t("bandName")}</th>
+              <th>{t("genre")}</th>
+              <th>{t("actions")}</th>
             </tr>
           </thead>
 
@@ -67,4 +69,4 @@ class NotesList extends Component {
     );
   }
 }
-export default NotesList;
+export default withNamespaces()(NotesList);

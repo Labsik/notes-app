@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { withNamespaces } from "react-i18next";
 
 class AddNote extends Component {
   state = {
@@ -38,40 +39,41 @@ class AddNote extends Component {
   };
 
   render() {
+    const { t } = this.props;
     return (
-      <div>
-        <h3>Add your note about music band</h3>
+      <div className="mt-4">
+        <h3>{t("addNote")}</h3>
         <form onSubmit={this.submitHandler}>
           <div className="form-group">
-            <label htmlFor="title"> Add music band </label>
+            <label htmlFor="title">{t("addTitle")}</label>
             <input
               type="text"
               className="form-control"
               name="title"
               id="title"
               value={this.state.title}
-              placeholder="Write music band"
+              placeholder={t("addTitle")}
               onChange={this.changeHandler}
               required
             />
           </div>
 
           <div className="form-group">
-            <label htmlFor="genre"> Add genre </label>
+            <label htmlFor="genre">{t("addGenre")}</label>
             <input
               type="text"
               className="form-control"
               name="genre"
               id="genre"
               value={this.state.genre}
-              placeholder="Write music genre"
+              placeholder={t("addGenre")}
               onChange={this.changeHandler}
               required
             />
           </div>
 
           <button type="submit" className="btn btn-success btn-block">
-            Add band
+            {t("addNote")}
           </button>
         </form>
       </div>
@@ -79,4 +81,4 @@ class AddNote extends Component {
   }
 }
 
-export default AddNote;
+export default withNamespaces()(AddNote);
