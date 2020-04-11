@@ -29,7 +29,7 @@ for installing and running a test and send URL via email.
 
 ## Installation Instructions
 
-The project contains server (backend) part and client (frontend) part.
+The project contains backend part and client (frontend) part.
 
 ## Run project:
 
